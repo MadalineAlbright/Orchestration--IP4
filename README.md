@@ -7,10 +7,10 @@ Make sure that you have the following installed:
 ## Navigate to the Client Folder 
  `cd client`
 
-## Run the folllowing command to install the dependencies 
+## Run the following command to install the dependencies 
  `npm install`
 
-## Run the folllowing to start the app
+## Run the following to start the app
  `npm start`
 
 ## Open a new terminal and run the same commands in the backend folder
@@ -21,3 +21,4 @@ Make sure that you have the following installed:
  `npm start`
 
  ### Go ahead a nd add a product (note that the price field only takes a numeric input)
+ 
