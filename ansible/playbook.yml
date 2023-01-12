@@ -1,0 +1,8 @@
+---
+  - name: "Running docker container"
+    hosts: localhost
+    connection: local 
+    tasks:
+    - name: "Run docker compose"
+      shell: "docker-compose -f ./docker-compose.yml"
+     
