@@ -1,0 +1,56 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: angular-webapp
+  name: angular-webapp
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: angular-webapp
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: angular-webapp
+    spec:
+      containers:
+      - image: maddie22/e-commerce-client:latest
+        name: webapp
+        imagePullPolicy: Always
+        resources: {}
+        ports:
+          - containerPort: 3000 
+status: {}
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: angular-backend
+  name: angular-backend
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: angular-backend
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: angular-webapp
+    spec:
+      containers:
+      - image: maddie22/e-commerce-backend:latest
+        name: backend
+        imagePullPolicy: Always
+        resources: {}
+        ports:
+          - containerPort: 5000 
+status: {}

@@ -1,0 +1,43 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: angular-webapp
+  labels:
+    run: angular-webapp
+spec:
+  ports:
+  - port: 3000
+    protocol: TCP
+  selector:
+    app: angular-webapp
+  type: NodePort
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: angular-backend
+  labels:
+    run: angular-backend
+spec:
+  ports:
+  - port: 5000
+    protocol: TCP
+  selector:
+    app: angular-backend
+  type: NodePort
+
+---
+apiVersion: v1 
+kind: Service
+metadata:
+  name: mongo
+  labels:
+    name: mongo
+spec:
+  ports:
+  - port: 27017
+    targetPort: 27017
+  clusterIP: None
+  selector:
+    role: mongo
